@@ -18,6 +18,24 @@
 */
 
 const int WPM =32;
+
+/* A "unit" is the smallest atom of time in morse code.
+ *  1 unit = 1 dot
+ *  1 dash = 3 dot
+ *  intra-letter spacing = 1 dot
+ *  intra-word spacing   = 3 dot
+ *  inter-word spacing   = 7 dot
+ *  to derive the unit constant, we use an average-length word "Paris" and convert it to morse, then calculate the total units (50)
+ *  At 1 Word Per Minute (WPM), 60 seconds pass per 50 units of morse code
+ *  60 / 50 = 1.2
+ *  1.2 / WPM gives us the atomic Morse Code time unit for that specific words-per-minute value. 
+ *  
+ *  eg: at 12WPM, the unit is 1.2/12 = 0.1 seconds
+ *  the average word is 50 units: 50 * 0.1 = 5 seconds per word
+ *  5 * 12 = 60 seconds
+ */
+
+ //multiplied by 1000 because delay function takes arguments in miliseconds
 int unit = (1.2 / WPM) * 1000;
 
 
