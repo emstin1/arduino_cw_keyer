@@ -15,9 +15,11 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 const int WPM =32;
 int unit = (1.2 / WPM) * 1000;
-*/
+
 
 void setup() {
   pinMode(13, OUTPUT);
